@@ -1,13 +1,103 @@
-function tinhtuoi() {
-    var tuoinhap = document.getElementById("ageinput").value;
+<!DOCTYPE html><html class="menu">
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
+<meta name="google" value="notranslate"/>
+<title>Side Menu</title>
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+</div><nav class="main-menu">
+ <div>
+    <a class="logo" href="http://startific.com">
+    </a> 
+  </div> 
+<div class="settings"></div>
+<div class="scrollbar" id="style-1">
+<ul>
+<li>                                   
+<a href="http://startific.com">
+<i class="fa fa-home fa-lg"></i>
+<span class="nav-text">Home</span>
+</a>
+</li>   
+<li>                                 
+<a href="https://www.facebook.com/UncleNam69">
+<i class="fa fa-envelope-o fa-lg"></i>
+<span class="nav-text">Contact</span>
+</a>
+</li>   
+<li>
+<a href="http://startific.com">
+<i class="fa fa-phone"></i>   <span class="share"> 
+<div class="addthis_default_style addthis_32x32_style">
+<div style="position:absolute;
+margin-left: 56px;top:3px;"> 
+ <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/UncleNam69" target="_blank" class="share-popup"><img src="https://www.facebook.com/images/fb_icon_325x325.png" width="30px" height="30px"></a>
+   <a href="https://github.com/trannamprolh?fbclid=IwAR1sxIYaQIxv-uYpmZ-Pjyw67adaE_aZ9Fg3bOeYejKAOFq-7IzQh2qlL70" target="_blank" class="share-popup"><img src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU" width="30px" height="30px"></a>
+<a href="https://www.instagram.com/Win_Peter69/" target="_blank" class="share-popup"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" width="30px" height="30px"></a>   
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ff17589278d8b3a"></script>                 
+ </span>
+ <span class="twitter"></span>
+   <span class="google"></span>
+   <span class="fb-like">  
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fstartific&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+</span>
+<span class="nav-text">
+</span>                
+</a>
+</li>
+</ul>
+<li>                            
+<a href="http://startific.com">
+<i class="fa fa-question-circle fa-lg"></i>
+<span class="nav-text">Help</span>
+</a>
+</li>   
+<ul class="logout">
+<li>
+  <a href="http://startific.com">
+   <i class="fa fa-lightbulb-o fa-lg"></i>
+</a>
+</li>  
+</ul>
+</nav>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    if(tuoinhap==""){
-        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Không được để rỗng</div>'
-    }else if(tuoinhap<=0){
-        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Mày chưa đẻ mà đòi tao tính à</div>'
-    }else if(tuoinhap<=100){
-        document.getElementById("vungchua").innerHTML = '<div class="alert alert-success">Tuổi của bạn là: '+ tuoinhap+'</div>'
-    } else {
-        document.getElementById("vungchua").innerHTML = '<div class="alert alert-danger">Con lạy cụ, cụ có phải là người không vậy ?</div>';
+<div ng-app="mtt" ng-controller="mtttm" class="container mt-3">
+<h1 style="color: pink">Máy biết tên, tuổi, giới tính thông minh</h1>
+<p style="color: white;font-weight: bold">Nhập tên của bạn</p>
+<p><input type="text" ng-model="Name" placeholder="Tên của bạn là gì ?" class="form-control"></p>
+  <p style="color: white;font-weight: bold">Nhập giới tính của bạn</p>
+<p><select class="form-select"<input ng-model="gender"> aria-label="Default select example">
+  <option selected>Giới tính của bạn là</option>
+  <option value="Nam">Nam</option>
+  <option value="Nữ">Nữ</option>
+  <option value="Bê Đuê">Bê Đuê</option>
+</select>
+</p>
+  <p style="color: white;font-weight: bold">Nhập tuổi của bạn</p>
+<p><input type="number" ng-model="tuoi" placeholder="Năm nay bạn bao nhiêu tuổi ?" class="form-control"></p>
+<p style="text-align: center"><button ng-click="myFunc()" class="btn btn-success">Tính tuổi, tên và giới tính</button></p>
+<div class="alert alert-success" ng-show="showMe">
+  Tên {{Name}}, Tuổi {{tuoi}}, Giới tính {{gender}}
+  </div>
+
+</div>
+<script>
+var app = angular.module('mtt', []);
+app.controller('mtttm', function($scope) {
+    $scope.showMe = false;
+    $scope.myFunc = function() {
+        $scope.showMe = !$scope.showMe;
     }
-}
+});
+</script>
+
